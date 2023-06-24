@@ -16,21 +16,18 @@ import '../GPScehcker/data_sotre.dart';
     } else {
       throw Exception(('Failed to load Data'));
     }
-    // var body = jsonDecode(response.body);
-    // print(Weather.fromJson(body));
-    // return Weather.fromJson(body);
   }
 
 class Weather{
-  final int? latitude;
-  final int? longitude;
-  final int? elevation;
-  final int? temp;
-  final int? wind;
-  final int? winddir;
-  final int? isday;
-  final int? weathercode;
-  final int? rainsum;
+  final dynamic? latitude;
+  final dynamic? longitude;
+  final dynamic? elevation;
+  final dynamic? temp;
+  final dynamic? wind;
+  final dynamic? winddir;
+  final dynamic? isday;
+  final dynamic? weathercode;
+  final dynamic? rainsum;
   final String? sunrise;
   final String? sunset;
 
