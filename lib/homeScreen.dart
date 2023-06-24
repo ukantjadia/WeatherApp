@@ -21,8 +21,7 @@ class _homescreenState extends State<homescreen> {
     apiCall();
   }
 
-
-  @override
+@override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Column(
