@@ -16,9 +16,51 @@ import '../GPScehcker/data_sotre.dart';
     } else {
       throw Exception(('Failed to load Data'));
     }
-
-
     // var body = jsonDecode(response.body);
     // print(Weather.fromJson(body));
     // return Weather.fromJson(body);
   }
+
+class Weather{
+  final int? latitude;
+  final int? longitude;
+  final int? elevation;
+  final int? temp;
+  final int? wind;
+  final int? winddir;
+  final int? isday;
+  final int? weathercode;
+  final int? rainsum;
+  final String? sunrise;
+  final String? sunset;
+
+  const Weather({
+    required this.latitude,
+    required this.longitude,
+    required this.elevation,
+    required this.temp,
+    required this.wind,
+    required this.winddir,
+    required this.isday,
+    required this.weathercode,
+    required this.rainsum,
+    required this.sunrise,
+    required this.sunset,
+  });
+  factory Weather.fromJson(Map<String, dynamic> json){
+    return Weather(
+      latitude: json['latiture'],
+      longitude: json['longitude'],
+      elevation: json['elevation'],
+      temp: json['current_weather']['temperature'],
+      wind: json['current_weather']['windspeed'],
+      winddir: json['current_weather']['winddirection'],
+      isday: json['current_weather']['is_day'],
+      weathercode: json['current_weather']['weathercode'],
+      rainsum: json['daily']['rain_sum'],
+      sunrise: json['daily']['sunrise'],
+      sunset: json['daily']['sunset'],
+    );
+  }
+}
+
