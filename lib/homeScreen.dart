@@ -2,25 +2,41 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:weather_app/GPScehcker/data_sotre.dart';
+import 'package:weather_app/apiModel/apiWithLocation.dart';
 
 import 'GPScehcker/gpsChecker.dart';
 
-class homePage extends StatelessWidget {
-  homePage({super.key});
+class homescreen extends StatefulWidget {
+  const homescreen({super.key});
+
+  @override
+  State<homescreen> createState() => _homescreenState();
+}
+
+class _homescreenState extends State<homescreen> {
   
-
-  
-  Future getData() async {
-    var response = await http.get(Uri.https('api.openweathermap.org','/data/2.5/forecast/daily'.{'lat':lan,}));
-    var jsonData = jsonDecode(response.body);
-    print(jsonData);
-    // api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={API key}
-
-
+  void initStart(){
+    super.initState();
+    apiCall();
   }
+
 
   @override
   Widget build(BuildContext context) {
-    return gpsChecker();
-    }
+    return MaterialApp(
+      home: Column(
+        children: [
+          Center(
+            child: Column(
+              children: [
+
+                // Text() 
+              ],
+            ),
+          )
+        ],
+      ) 
+    );
+  }
 }
