@@ -8,7 +8,7 @@ import 'package:weather_app/apiModel/apiWithLocation.dart';
 import 'GPScehcker/gpsChecker.dart';
 
 class homescreen extends StatefulWidget {
-  const homescreen({super.key});
+  // const homescreen({super.key});
 
   @override
   State<homescreen> createState() => _homescreenState();
@@ -16,10 +16,7 @@ class homescreen extends StatefulWidget {
 
 class _homescreenState extends State<homescreen> {
   
-  void initStart(){
-    super.initState();
-    apiCall();
-  }
+
 
 @override
   Widget build(BuildContext context) {

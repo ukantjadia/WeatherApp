@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
 class gpsChecker extends StatefulWidget {
-  const gpsChecker({super.key});
+  // const gpsChecker({super.key});
 
   @override
   State<gpsChecker> createState() => _gpsCheckerState();
