@@ -57,7 +57,7 @@ class _homescreenState extends State<homescreen> {
             body: Column(
               children: [
                 Text("${snapshot.data!.latitude}"  ),
-                Text("${snapshot.data!.daily}"  ),
+                Text("${snapshot.data!.daily?.rainSum?[0]}"  ),
               ],
             ),
           );
