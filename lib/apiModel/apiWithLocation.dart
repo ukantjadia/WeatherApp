@@ -1,9 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart'as http;
-import 'package:weather_app/api_data/api_data.dart';
 
-import '../GPScehcker/data_sotre.dart';
+import '../api_dart.dart';
 
 // ignore: camel_case_types
 Future<ApiData>? getCurrentWeather() async{
