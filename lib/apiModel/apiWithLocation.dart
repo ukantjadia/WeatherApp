@@ -5,7 +5,7 @@ import 'package:http/http.dart'as http;
 import '../api_dart.dart';
 
 // ignore: camel_case_types
-Future<ApiData>? getCurrentWeather() async{
+Future<ApiData> getCurrentWeather() async{
   // var endpoint  = Uri.parse(
   //   "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m");
   var endpoint  = Uri.parse(

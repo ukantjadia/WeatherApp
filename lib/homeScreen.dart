@@ -1,7 +1,5 @@
-import 'package:http/http.dart'as http;
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:weather_app/apiModel/apiWithLocation.dart';
 import 'api_dart.dart';
 
 class homescreen extends StatefulWidget {
@@ -24,24 +22,26 @@ class homescreen extends StatefulWidget {
   //   }
   // }
 
-  Future<ApiData> fetechData() async {
-    final response = await http.get(Uri.parse('https://api.open-meteo.com/v1/forecast?latitude=26.91&longitude=75.79&hourly=temperature_2m&daily=sunrise,sunset,rain_sum&current_weather=true&forecast_days=14&start_date=2023-06-23&end_date=2023-07-01&timezone=auto'));
+  // Future<ApiData> fetechData() async {
+  //   final response = await http.get(Uri.parse('https://api.open-meteo.com/v1/forecast?latitude=26.91&longitude=75.79&hourly=temperature_2m&daily=sunrise,sunset,rain_sum&current_weather=true&forecast_days=14&start_date=2023-06-23&end_date=2023-07-01&timezone=auto'));
 
-    if (response.statusCode == 200) {
-      return ApiData.fromJson(jsonDecode(response.body));
-    } else {
-      throw Exception('Failed to load data');
-    }
-  }
+  //   if (response.statusCode == 200) {
+  //     return ApiData.fromJson(jsonDecode(response.body));
+  //   } else {
+  //     throw Exception('Failed to load data');
+  //   }
+  // }
 
 
 class _homescreenState extends State<homescreen> {
   late Future<ApiData> futureWeather;
+  // late Future<ApiData> futureWeather;
 
   @override
   void initState() {
     super.initState();
-    futureWeather = fetechData() ;
+    futureWeather = getCurrentWeather() ;
+    // futureWeather = fetechData() ;
   }
 
   @override
@@ -58,6 +58,9 @@ class _homescreenState extends State<homescreen> {
               children: [
                 Text("${snapshot.data!.latitude}"  ),
                 Text("${snapshot.data!.daily?.rainSum?[0]}"  ),
+                Text("${snapshot.data!.elevation}"  ),
+                Text("${snapshot.data!.currentWeather?.temperature}"  ),
+                Text("${snapshot.data!.currentWeather?.windspeed}"  ),
               ],
             ),
           );
