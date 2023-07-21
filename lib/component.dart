@@ -15,7 +15,8 @@ class _bottomSheetCompoState extends State<bottomSheetCompo> {
         child: Scaffold(
           // backgroundColor: Colors.amberAccent,
           body: Container(
-            height: 500,width: 500,
+            height: 500,
+            width: 500,
             color: Colors.amberAccent,
             child: Center(
               child: Column(
@@ -26,49 +27,102 @@ class _bottomSheetCompoState extends State<bottomSheetCompo> {
                         showModalBottomSheet(
                           context: context,
                           anchorPoint: Offset(30, 30),
+                          // showDragHandle: true,
+
+                          // backgroundColor:  LinearGradient(colors: [Colors.red,Colors.blue],begin: Alignment.topLeft,end: Alignment.bottomRight),
                           backgroundColor: Colors.transparent,
-                          barrierColor: Colors.black.withAlpha(1),
+                          // barrierColor: Colors.black.withAlpha(1),
                           elevation: 10,
-                          clipBehavior: Clip.hardEdge,
+                          isScrollControlled: true,
+                          enableDrag: true,
                           shape: BeveledRectangleBorder(
+                            side: BorderSide(color: Colors.red),
                             borderRadius: BorderRadius.all(
                               Radius.circular(10),
                             ),
                           ),
                           builder: (context) {
-                            return Container(
-                              height: 200,
-                              width:400,
-                              child: Center(
-                                child: ListView.builder(
-                                  itemCount: 3,
-                                  scrollDirection: Axis.horizontal,
-                                  itemBuilder: (context, index) {
-                                    return Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Container(
-                                          margin: EdgeInsets.all(20),
-                                          // padding: EdgeInsets.all(15),
-                                          height:130,width: 80,
-                                          decoration: BoxDecoration(
-                                             borderRadius: BorderRadius.circular(30),
-                                            color: Colors.red.withAlpha(100)
-                                          ),
-                                          child: Column(
-                                            children: [
-                                              Text("${index} AM"),
-                                              Icon(Icons.wb_sunny_outlined,size:25),
-                                              Text("34")
-                                            ],
-                                          ),
-                                        ),
-                                        // Text("sdlfjsdlfkjsdlfjs"),
-                                      ],
-                                    );
-                                  },
+                            return Column(
+                              children: [
+                                Container(
+                                  width: double.infinity,
+                                  height: 30,
+                                  color: Colors.purple.withBlue(70),
                                 ),
-                              ),
+                                Container(
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 0.65,
+                                  // width: 60,
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Color.fromRGBO(46, 51, 90, 0.26),
+                                        Color.fromRGBO(28, 27, 51, 0.26)
+                                      ],
+                                    ),
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(44),
+                                      topRight: Radius.circular(44),
+                                    ),
+                                  ),
+                                  child: ListView.builder(
+                                    itemCount: 30,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) {
+                                      return SingleChildScrollView(
+                                        primary: true,
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.symmetric(
+                                                  vertical: 16, horizontal: 8),
+                                              height: 146,
+                                              width: 60,
+                                              decoration: ShapeDecoration(
+                                                color: Color(0x3348319D),
+                                                shape: RoundedRectangleBorder(
+                                                  side: BorderSide(
+                                                    width: 0.50,
+                                                    color: Colors.white
+                                                        .withOpacity(
+                                                            0.20000000298023224),
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(30),
+                                                ),
+                                                shadows: [
+                                                  BoxShadow(
+                                                    color: Color(0x3F000000),
+                                                    blurRadius: 10,
+                                                    offset: Offset(5, 4),
+                                                    spreadRadius: 0,
+                                                  )
+                                                ],
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text("AM"),
+                                                  Icon(Icons.wb_sunny_outlined,
+                                                      size: 25),
+                                                  Text("3$index")
+                                                ],
+                                              ),
+                                            ),
+                                            // Text("sdlfjsdlfkjsdlfjs"),
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ],
                             );
                           },
                         );
