@@ -42,87 +42,141 @@ class _bottomSheetCompoState extends State<bottomSheetCompo> {
                             ),
                           ),
                           builder: (context) {
-                            return Column(
-                              children: [
-                                Container(
-                                  width: double.infinity,
-                                  height: 30,
-                                  color: Colors.purple.withBlue(70),
+                            return Container(
+                              height: MediaQuery.sizeOf(context).height * 0.65,
+                              // width: 60,
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Color.fromRGBO(46, 51, 90, 0.26),
+                                    Color.fromRGBO(28, 27, 51, 0.26)
+                                  ],
                                 ),
-                                Container(
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 0.65,
-                                  // width: 60,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        Color.fromRGBO(46, 51, 90, 0.26),
-                                        Color.fromRGBO(28, 27, 51, 0.26)
-                                      ],
-                                    ),
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(44),
-                                      topRight: Radius.circular(44),
-                                    ),
-                                  ),
-                                  child: ListView.builder(
-                                    itemCount: 30,
-                                    scrollDirection: Axis.horizontal,
-                                    itemBuilder: (context, index) {
-                                      return SingleChildScrollView(
-                                        primary: true,
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
+                                color: Colors.white,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(44),
+                                  topRight: Radius.circular(44),
+                                ),
+                              ),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    width: double.infinity,
+                                    height: 55,
+                                    color: Colors.purple.withBlue(70),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              top: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.013),
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.10,
+                                          height: 5,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(9),
+                                            ),
+                                            color: Colors.red,
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment : MainAxisAlignment.spaceAround,
+                                          crossAxisAlignment: CrossAxisAlignment.end,
                                           children: [
                                             Container(
-                                              margin: EdgeInsets.symmetric(
-                                                  vertical: 16, horizontal: 8),
-                                              height: 146,
-                                              width: 60,
-                                              decoration: ShapeDecoration(
-                                                color: Color(0x3348319D),
-                                                shape: RoundedRectangleBorder(
-                                                  side: BorderSide(
-                                                    width: 0.50,
-                                                    color: Colors.white
-                                                        .withOpacity(
-                                                            0.20000000298023224),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(30),
-                                                ),
-                                                shadows: [
-                                                  BoxShadow(
-                                                    color: Color(0x3F000000),
-                                                    blurRadius: 10,
-                                                    offset: Offset(5, 4),
-                                                    spreadRadius: 0,
-                                                  )
-                                                ],
-                                              ),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text("AM"),
-                                                  Icon(Icons.wb_sunny_outlined,
-                                                      size: 25),
-                                                  Text("3$index")
-                                                ],
+                                              alignment: Alignment.center,
+                                              child: Text(
+                                                "Hourly Forcast",
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.w600),
                                               ),
                                             ),
-                                            // Text("sdlfjsdlfkjsdlfjs"),
+                                            Container(
+                                              alignment: Alignment.center,
+                                              child: Text(
+                                                "Weekly Forcast",
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                            ),
                                           ],
-                                        ),
-                                      );
-                                    },
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.50,
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.30,
+                                    child: ListView.builder(
+                                      itemCount: 30,
+                                      scrollDirection: Axis.horizontal,
+                                      itemBuilder: (context, index) {
+                                        return SingleChildScrollView(
+                                          primary: true,
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Container(
+                                                margin: EdgeInsets.symmetric(
+                                                    vertical: 16,
+                                                    horizontal: 8),
+                                                height: 146,
+                                                width: 60,
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0x3348319D),
+                                                  shape: RoundedRectangleBorder(
+                                                    side: BorderSide(
+                                                      width: 0.50,
+                                                      color: Colors.white
+                                                          .withOpacity(
+                                                              0.20000000298023224),
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30),
+                                                  ),
+                                                  shadows: [
+                                                    BoxShadow(
+                                                      color: Color(0x3F000000),
+                                                      blurRadius: 10,
+                                                      offset: Offset(5, 4),
+                                                      spreadRadius: 0,
+                                                    )
+                                                  ],
+                                                ),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
+                                                  children: [
+                                                    Text("AM"),
+                                                    Icon(
+                                                        Icons.wb_sunny_outlined,
+                                                        size: 25),
+                                                    Text("3$index")
+                                                  ],
+                                                ),
+                                              ),
+                                              // Text("sdlfjsdlfkjsdlfjs"),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
                             );
                           },
                         );
