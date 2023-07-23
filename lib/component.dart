@@ -27,11 +27,7 @@ class _bottomSheetCompoState extends State<bottomSheetCompo> {
                         showModalBottomSheet(
                           context: context,
                           anchorPoint: Offset(30, 30),
-                          // showDragHandle: true,
-
-                          // backgroundColor:  LinearGradient(colors: [Colors.red,Colors.blue],begin: Alignment.topLeft,end: Alignment.bottomRight),
                           backgroundColor: Colors.transparent,
-                          // barrierColor: Colors.black.withAlpha(1),
                           elevation: 10,
                           isScrollControlled: true,
                           enableDrag: true,
@@ -60,10 +56,11 @@ class _bottomSheetCompoState extends State<bottomSheetCompo> {
                               ),
                               child: Column(
                                 children: [
+
+                                  //?
                                   Container(
                                     width: double.infinity,
-                                    height: 55,
-                                    color: Colors.purple.withBlue(70),
+                                    color: Colors.purple.withBlue(30),
                                     child: Column(
                                       children: [
                                         Container(
@@ -83,8 +80,10 @@ class _bottomSheetCompoState extends State<bottomSheetCompo> {
                                           ),
                                         ),
                                         Row(
-                                          mainAxisAlignment : MainAxisAlignment.spaceAround,
-                                          crossAxisAlignment: CrossAxisAlignment.end,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
                                           children: [
                                             Container(
                                               alignment: Alignment.center,
@@ -111,70 +110,83 @@ class _bottomSheetCompoState extends State<bottomSheetCompo> {
                                       ],
                                     ),
                                   ),
-                                  Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 0.50,
-                                    height: MediaQuery.sizeOf(context).height *
-                                        0.30,
-                                    child: ListView.builder(
-                                      itemCount: 30,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) {
-                                        return SingleChildScrollView(
-                                          primary: true,
-                                          scrollDirection: Axis.horizontal,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Container(
-                                                margin: EdgeInsets.symmetric(
-                                                    vertical: 16,
-                                                    horizontal: 8),
-                                                height: 146,
-                                                width: 60,
-                                                decoration: ShapeDecoration(
-                                                  color: Color(0x3348319D),
-                                                  shape: RoundedRectangleBorder(
-                                                    side: BorderSide(
-                                                      width: 0.50,
-                                                      color: Colors.white
-                                                          .withOpacity(
-                                                              0.20000000298023224),
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
-                                                  ),
-                                                  shadows: [
-                                                    BoxShadow(
-                                                      color: Color(0x3F000000),
-                                                      blurRadius: 10,
-                                                      offset: Offset(5, 4),
-                                                      spreadRadius: 0,
-                                                    )
-                                                  ],
-                                                ),
-                                                child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceEvenly,
-                                                  children: [
-                                                    Text("AM"),
-                                                    Icon(
-                                                        Icons.wb_sunny_outlined,
-                                                        size: 25),
-                                                    Text("3$index")
-                                                  ],
-                                                ),
-                                              ),
-                                              // Text("sdlfjsdlfkjsdlfjs"),
-                                            ],
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ),
+
+                                  Expanded(
+                                    child: ListView.builder(itemCount: 20,itemBuilder: (context, index) {
+                                      
+                                      return Container(
+                                        height: 100,
+                                        width: 100,
+                                        color:Colors.red,
+                                        child: Text("sdfjsdlfjsdf"),
+                                      );
+                                    },),
+                                  )
+                                  // Container(
+                                  //   width:
+                                  //       MediaQuery.sizeOf(context).width * 0.50,
+                                  //   height: MediaQuery.sizeOf(context).height *
+                                  //       0.30,
+                                  //   child: ListView.builder(
+                                  //     itemCount: 30,
+                                  //     scrollDirection: Axis.horizontal,
+                                  //     // shrinkWrap: true,
+                                  //     physics: NeverScrollableScrollPhysics(),
+                                      
+                                  //     itemBuilder: (context, index) {
+                                  //       return Row(
+                                  //         mainAxisAlignment:
+                                  //             MainAxisAlignment.spaceBetween,
+                                  //         children: [
+                                  //           Container(
+                                  //             margin: EdgeInsets.symmetric(
+                                  //                 vertical: 16,
+                                  //                 horizontal: 8),
+                                  //             height: 146,
+                                  //             width: 60,
+                                  //             decoration: ShapeDecoration(
+                                  //               color: Color(0x3348319D),
+                                  //               shape: RoundedRectangleBorder(
+                                  //                 side: BorderSide(
+                                  //                   width: 0.50,
+                                  //                   color: Colors.white
+                                  //                       .withOpacity(
+                                  //                           0.20000000298023224),
+                                  //                 ),
+                                  //                 borderRadius:
+                                  //                     BorderRadius.circular(
+                                  //                         30),
+                                  //               ),
+                                  //               shadows: [
+                                  //                 BoxShadow(
+                                  //                   color: Color(0x3F000000),
+                                  //                   blurRadius: 10,
+                                  //                   offset: Offset(5, 4),
+                                  //                   spreadRadius: 0,
+                                  //                 )
+                                  //               ],
+                                  //             ),
+                                  //             child: Column(
+                                  //               mainAxisAlignment:
+                                  //                   MainAxisAlignment
+                                  //                       .spaceEvenly,
+                                  //               children: [
+                                  //                 Text("AM"),
+                                  //                 Icon(
+                                  //                     Icons.wb_sunny_outlined,
+                                  //                     size: 25),
+                                  //                 Text("3$index")
+                                  //               ],
+                                  //             ),
+                                  //           ),
+                                  //           // Text("sdlfjsdlfkjsdlfjs"),
+                                  //         ],
+                                  //       );
+                                  //     },
+                                  //   ),
+                                  // ),
+                                
+                                
                                 ],
                               ),
                             );
