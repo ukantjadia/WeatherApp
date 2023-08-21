@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'homeScreen.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: homescreen(), 
+      home: homescreen(),
     );
   }
 }

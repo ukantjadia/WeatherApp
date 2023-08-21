@@ -17,16 +17,15 @@
 //   );
 
 //   Weather.fromJson(Map<String, dynamic> json){
-//     cityName = json['name']; 
-//     temp = json['main']['temp']; 
-//     wind = json['wind']['speed']; 
-//     pressure = json['main']; 
+//     cityName = json['name'];
+//     temp = json['main']['temp'];
+//     wind = json['wind']['speed'];
+//     pressure = json['main'];
 //   }
-
 
 // }
 
-class Weather{
+class Weather {
   final int? latitude;
   final int? longitude;
   final int? elevation;
@@ -52,7 +51,7 @@ class Weather{
     required this.sunrise,
     required this.sunset,
   });
-  factory Weather.fromJson(Map<String, dynamic> json){
+  factory Weather.fromJson(Map<String, dynamic> json) {
     return Weather(
       latitude: json['latiture'],
       longitude: json['longitude'],

@@ -1,14 +1,15 @@
 class ApiData {
   ApiData({
-      this.latitude, 
-      this.longitude, 
-      this.generationtimeMs, 
-      this.utcOffsetSeconds, 
-      this.timezone, 
-      this.timezoneAbbreviation, 
-      this.elevation, 
-      this.dailyUnits, 
-      this.daily,});
+    this.latitude,
+    this.longitude,
+    this.generationtimeMs,
+    this.utcOffsetSeconds,
+    this.timezone,
+    this.timezoneAbbreviation,
+    this.elevation,
+    this.dailyUnits,
+    this.daily,
+  });
 
   ApiData.fromJson(dynamic json) {
     latitude = json['latitude'];
@@ -18,7 +19,9 @@ class ApiData {
     timezone = json['timezone'];
     timezoneAbbreviation = json['timezone_abbreviation'];
     elevation = json['elevation'];
-    dailyUnits = json['daily_units'] != null ? DailyUnits.fromJson(json['daily_units']) : null;
+    dailyUnits = json['daily_units'] != null
+        ? DailyUnits.fromJson(json['daily_units'])
+        : null;
     daily = json['daily'] != null ? Daily.fromJson(json['daily']) : null;
   }
   num? latitude;
@@ -48,13 +51,13 @@ class ApiData {
     }
     return map;
   }
-
 }
 
 class Daily {
   Daily({
-      this.time, 
-      this.sunrise,});
+    this.time,
+    this.sunrise,
+  });
 
   Daily.fromJson(dynamic json) {
     time = json['time'] != null ? json['time'].cast<String>() : [];
@@ -69,13 +72,13 @@ class Daily {
     map['sunrise'] = sunrise;
     return map;
   }
-
 }
 
 class DailyUnits {
   DailyUnits({
-      this.time, 
-      this.sunrise,});
+    this.time,
+    this.sunrise,
+  });
 
   DailyUnits.fromJson(dynamic json) {
     time = json['time'];
@@ -90,5 +93,4 @@ class DailyUnits {
     map['sunrise'] = sunrise;
     return map;
   }
-
 }

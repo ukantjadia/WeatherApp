@@ -1,4 +1,3 @@
-
 class ApiData {
   double? latitude;
   double? longitude;

@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-import 'package:http/http.dart'as http;
+import 'package:http/http.dart' as http;
 
 import '../api_dart.dart';
 
 // ignore: camel_case_types
-Future<ApiData> getCurrentWeather() async{
+Future<ApiData> getCurrentWeather() async {
   // var endpoint  = Uri.parse(
   //   "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m");
-  var endpoint  = Uri.parse(
-    "https://api.open-meteo.com/v1/forecast?latitude=26.91&longitude=75.79&hourly=temperature_2m&daily=sunrise,sunset,rain_sum&current_weather=true&forecast_days=14&start_date=2023-06-23&end_date=2023-07-01&timezone=auto");
+  var endpoint = Uri.parse(
+      "https://api.open-meteo.com/v1/forecast?latitude=26.91&longitude=75.79&hourly=temperature_2m&daily=sunrise,sunset,rain_sum&current_weather=true&forecast_days=14&start_date=2023-06-23&end_date=2023-07-01&timezone=auto");
   var response = await http.get(endpoint);
   if (response.statusCode == 200) {
     return ApiData.fromJson(jsonDecode(response.body));
@@ -60,4 +60,3 @@ Future<ApiData> getCurrentWeather() async{
 //     );
 //   }
 // }
-
